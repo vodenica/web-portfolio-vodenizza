@@ -31,13 +31,13 @@ header h1 {
 
 /* Style the navigation bar */
 nav {
-    background: #444;
+    background: #4a6a75;
     padding: 10px 0;
     text-align: center;
 }
 
 nav a {
-    color: #4a6a75;
+    color: #f5f5f5;
     padding: 10px 20px;
     display: inline-block;
 }
