@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dalibors' Web Page</title>
     <!-- Favicon (Browser Tab Icon) -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔧</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔧</text></svg>">
     <link rel="stylesheet" href="styles.css">
     <!-- This style for the logo -->
     <style>
@@ -51,7 +53,8 @@
 
         /* Main content padding */
         main {
-            margin-top: 150px; /* Add space for fixed header */
+            margin-top: 150px;
+            /* Add space for fixed header */
         }
 
         /* Responsive design */
@@ -59,12 +62,12 @@
             .header-container {
                 padding: 15px 30px;
             }
-            
+
             .logo {
                 width: 250px;
                 height: auto;
             }
-            
+
             nav ul {
                 gap: 20px;
             }
@@ -76,35 +79,56 @@
                 padding: 15px;
                 position: relative;
             }
-            
+
             .logo {
                 width: 200px;
                 margin-bottom: 15px;
             }
-            
+
             nav ul {
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 15px;
             }
-            
+
             main {
                 margin-top: 30px;
             }
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const links = document.querySelectorAll('nav a');
+            const sections = document.querySelectorAll('main section');
+
+            links.forEach(link => {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    sections.forEach(section => {
+                        if (section.id === targetId) {
+                            section.style.display = 'block';
+                        } else {
+                            section.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </head>
+
 <body>
     <header>
         <!-- Add logo image -->
         <img src="img/logo-vodenizza-engineering-large-orng-blck-resize.png" alt="Website Logo" class="logo">
-        <h1>Welcome to My Portfolio</h1>
+        <h1>Welcome to My Portfolio Website</h1>
         <h2>Dalibor Vodeničarski, Ph.D., MBA, BSc</h2>
     </header>
     <nav>
         <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
+            <li><a href="#about">About Me</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#blogs">Blogs</a></li>
@@ -114,26 +138,260 @@
     <main>
         <section id="home">
             <h2>Home</h2>
-            <p>This is the home section of the web page.</p>
+            <br>
+            <h3>Good day everyone, my name is Dalibor Vodeničarski. I hold a PhD in Information Systems, a Master of
+                Business Administration with a specialization in Corporate Finance, and a Bachelor's degree in
+                Electrical Engineering.</h3>
+            <br>
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <img src="img/DV-profile-photo.png" alt="Profile Photo" class="profile-photo" id="profile-photo"
+                    style="margin-right: 20px;">
+            </div>
+            <br>
+            <br>
+            <p>Please download my Resume by clicking the button below:</p>
+            <br>
+            <a href="assets/Dalibor-Vodenicarski-Resume.pdf" download="Dalibor-Vodenicarski-Resume.pdf">
+                <button class="download-resume">Download Resume</button>
+            </a>
+            <br>
+            <br>
+            <p>Connect with me on <a href="https://www.linkedin.com/in/daliborvodenicarski/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                        alt="LinkedIn Logo" style="width: 20px; height: 20px; vertical-align: middle;">
+                </a>.</p></a>
+            <br>
         </section>
+
         <section id="about">
-            <h2>About</h2>
-            <p>This is the about me section of the LinkedIn web page.</p>
-            <p>Connect with me on <a href="https://www.linkedin.com/in/daliborvodenicarski/" target="_blank">LinkedIn</a>.</p>
+            <h2>About Me</h2>
+            <br>
+            <p>Results-oriented senior engineering and operations leader with 20+ years improving operational and
+                maintenance efficiency and
+                customer satisfaction. Managed global business transformations, prioritizing multiple projects and tasks
+                concurrently across diverse
+                sectors while gaining a multicultural perspective. Exceptional communicator and collaborator with
+                fluency in English, skilled at
+                conveying technical concepts to all stakeholders. Motivated self-starter who thrives in high-pressure,
+                competitive environments.
+            </p>
+            <br>
+            <h2>Key Skills and Strengths</h2>
+            <br>
+            <div class="skill-category">
+                <h3>Leadership and Team Management</h3>
+                <ul>
+                    <li>- Successfully directed large cross-functional teams and global projects.</li>
+                    <li>- Proven track record of managing multicultural teams and mentoring staff.</li>
+                    <li>- Experience in workforce planning and HR analytics.</li>
+                </ul>
+            </div>
+            <br>
+            <div class="skill-category">
+                <h3>Project and Operations Management</h3>
+                <ul>
+                    <li>- Managed end-to-end operations for large-scale facilities and organizations.</li>
+                    <li>- Delivered complex projects within time and budget constraints.</li>
+                    <li>- Expertise in lean manufacturing, operational efficiency, and logistics.</li>
+                </ul>
+            </div>
+            <br>
+            <div class="skill-category">
+                <h3>Engineering Expertise</h3>
+                <ul>
+                    <li>- Deep knowledge of electrical and mechanical systems, including cable cars, amusement rides,
+                        and
+                        ski lifts.</li>
+                    <li>- Hands-on experience with troubleshooting, system design, and maintenance.</li>
+                    <li>- Strong background in implementing CMMS/ERP systems and digital transformation initiatives.
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <div class="skill-category">
+                <h3>Health, Safety, and Regulatory Compliance</h3>
+                <ul>
+                    <li>- Ensured ISO 9001:2015 compliance and high safety standards.</li>
+                    <li>- Led health and safety initiatives in high-pressure environments.</li>
+                </ul>
+            </div>
+            <br>
+            <div class="skill-category">
+                <h3>Blockchain and Emerging Technologies</h3>
+                <ul>
+                    <li>- PhD-level expertise in blockchain and IoT integration for maintenance systems.</li>
+                    <li>- Skilled in developing enterprise-grade blockchain solutions using Hyperledger Fabric.</li>
+                </ul>
+            </div>
+            <br>
+            <div class="skill-category">
+                <h3>Multisector Experience</h3>
+                <ul>
+                    <li>- Industries: transportation, food production, security systems, amusement parks, tourism, and
+                        hospitality.</li>
+                    <li>- Hands-on experience in diverse environments, including ski resorts, factories, and aviation.
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <div class="skill-category">
+                <h3>Education and Certifications</h3>
+                <ul>
+                    <li>- Advanced degrees (PhD, MBA) and certifications in blockchain, safety, and financial analysis.
+                    </li>
+                    <li>- Strong educational foundation in electrical engineering and information systems.</li>
+                </ul>
+            </div>
+            <br>
+            <p>Please download my Resume by clicking the button below:</p>
+            <br>
+            <a href="assets/Dalibor-Vodenicarski-Resume.pdf" download="Dalibor-Vodenicarski-Resume.pdf">
+                <button class="download-resume">Download Resume</button>
+            </a>
+            <br>
+            <br>
+            <p>Connect with me on <a href="https://www.linkedin.com/in/daliborvodenicarski/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                        alt="LinkedIn Logo" style="width: 20px; height: 20px; vertical-align: middle;">
+                </a>.</p></a>
+            <br>
         </section>
+        <!-- Services Section -->
         <section id="services">
             <h2>Services</h2>
-            <p>This is the services section of the web page.</p>
-            <ul>
-                <li>- Technical Expertise in various fields.</li>
-                <li>- Mid to Senior Management.</li>
-                <li>- Blockchain Architecture typically in Hyperledger Fabric and Hyperledger Firefly.</li>
-                <li>- Cable Car Industry Specialist with more than 15 years of experience.</li>
-                <li>- Agricultural Evangelist with a focus on IoT, SmartFarming, Machine Learning and Blockchain integration.</li>
-            </ul>
+            <br>
+            <div class="service-category">
+                <h3>Career Coaching & Professional Development</h3>
+                <ul>
+                    <li><strong>- Leadership Mentoring:</strong> Develop skills in team management, collaboration, and
+                        strategic thinking.</li>
+                    <li><strong>- Career Transition Guidance:</strong> Support professionals transitioning into
+                        engineering, operations, or leadership roles.</li>
+                    <li><strong>- Technical Career Growth:</strong> Help engineers advance their careers, including
+                        moving
+                        into leadership positions.</li>
+                    <li><strong>- Resume & Interview Preparation:</strong> Craft technical resumes and prepare for
+                        career
+                        advancements.</li>
+                </ul>
+            </div>
+            <br>
+            <div class="service-category">
+                <h3>Engineering & Technical Consulting</h3>
+                <ul>
+                    <li><strong>- Technical Troubleshooting:</strong> Solve electrical and mechanical challenges in
+                        cable
+                        cars, ski lifts, and amusement park systems.</li>
+                    <li><strong>- System Optimization:</strong> Design and upgrade systems for efficiency, safety, and
+                        compliance.</li>
+                    <li><strong>- Maintenance Systems:</strong> Implement CMMS/ERP systems to streamline maintenance
+                        operations.</li>
+                    <li><strong>- Energy Efficiency:</strong> Optimize power systems and reduce energy consumption.</li>
+                </ul>
+            </div>
+            <br>
+            <div class="service-category">
+                <h3>Operations & Project Management Consulting</h3>
+                <ul>
+                    <li><strong>- Operational Excellence:</strong> Drive lean manufacturing, process optimization, and
+                        waste reduction.</li>
+                    <li><strong>- Project Management:</strong> Deliver large-scale engineering and operational projects
+                        on
+                        time and within budget.</li>
+                    <li><strong>- Regulatory Compliance:</strong> Ensure ISO standards and other regulatory requirements
+                        are met.</li>
+                    <li><strong>- Safety Management:</strong> Develop and implement safety standards tailored for
+                        engineering and operational environments.</li>
+                </ul>
+            </div>
+            <br>
+            <div class="service-category">
+                <h3>Digital Transformation & Technology Integration</h3>
+                <ul>
+                    <li><strong>- Blockchain Solutions:</strong> Design blockchain-based systems for operations and
+                        maintenance.</li>
+                    <li><strong>- IoT Integration:</strong> Incorporate IoT technologies into operational frameworks.
+                    </li>
+                    <li><strong>- Software Solutions:</strong> Implement ERP, EAM, and CMMS systems to enhance
+                        efficiency.
+                    </li>
+                    <li><strong>- Workforce Analytics:</strong> Develop KPI dashboards and tools to improve workforce
+                        planning.</li>
+                </ul>
+            </div>
+            <br>
+            <div class="service-category">
+                <h3>Industry-Specific Services</h3>
+                <ul>
+                    <li><strong>- Food Manufacturing:</strong> Enhance efficiency, safety, and compliance in food
+                        production facilities.</li>
+                    <li><strong>- Tourism & Hospitality:</strong> Optimize cable car systems, amusement parks, and resort
+                        operations.</li>
+                    <li><strong>- Security Systems:</strong> Provide expertise in fire safety, security, and CCTV systems.
+                    </li>
+                    <li><strong>- Transportation Systems:</strong> Consult on the maintenance and optimization of urban
+                        cable cars and complex transit systems.</li>
+                </ul>
+            </div>
+            <br>
+            <div class="service-category">
+                <h3>Training & Development</h3>
+                <ul>
+                    <li><strong>- Technical Training:</strong> Deliver programs on maintenance, safety, and system
+                        operations.</li>
+                    <li><strong>- Leadership Workshops:</strong> Train teams in communication, stakeholder management,
+                        and
+                        collaboration.</li>
+                    <li><strong>- Cross-Cultural Training:</strong> Help organizations navigate multicultural
+                        environments
+                        effectively.</li>
+                    <li><strong>- Blockchain & IoT Workshops:</strong> Educate teams on emerging technologies and their
+                        applications.</li>
+                </ul>
+            </div>
+            <br>
+            <div class="service-category">
+                <h3>Financial & Strategic Consulting</h3>
+                <ul>
+                    <li><strong>- Cost Optimization:</strong> Assist with budgeting, cost forecasting, and resource
+                        allocation.</li>
+                    <li><strong>- Business Transformation:</strong> Lead digital transformation initiatives to
+                        streamline
+                        operations.</li>
+                    <li><strong>- Strategic Planning:</strong> Develop and execute innovative strategies for long-term
+                        growth.</li>
+                </ul>
+            </div>
+            <br>
+            <div class="service-category">
+                <h3>Industry Research & Writing</h3>
+                <ul>
+                    <li><strong>- Technical Documentation:</strong> Author white papers, technical guides, and research
+                        papers.</li>
+                    <li><strong>- Industry Insights:</strong> Provide research-based recommendations for adopting new
+                        technologies.</li>
+                    <li><strong>- Academic Collaboration:</strong> Support institutions and students in blockchain, IoT,
+                        and maintenance system research.</li>
+                </ul>
+            </div>
+            <br>
+            <p>Please download my Resume by clicking the button below:</p>
+            <br>
+            <a href="assets/Dalibor-Vodenicarski-Resume.pdf" download="Dalibor-Vodenicarski-Resume.pdf">
+                <button class="download-resume">Download Resume</button>
+            </a>
+            <br>
+            <br>
+            <p>Connect with me on <a href="https://www.linkedin.com/in/daliborvodenicarski/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                        alt="LinkedIn Logo" style="width: 20px; height: 20px; vertical-align: middle;">
+                </a>.</p></a>
+            <br>
+
         </section>
         <section id="projects">
             <h2>Projects</h2>
+            <br>
             <p>This is the project section of the web page.</p>
             <ul>
                 <li>- Wynn Palace Skycab, Macao, S.A.R. China.</li>
@@ -145,22 +403,40 @@
         </section>
         <section id="blogs">
             <h2>Blog</h2>
-            <p>Under construction.</p>
+            <p style="text-align: center; font-size: 2em;">🚧 Under construction 🚧</p>
         </section>
         <section id="contact">
             <h2>Contact</h2>
-            <p>This is the contact section of the web page.</p>
+            <br>
+            <h3>If you have any questions, please do not hastate and fill up the form below.</h3>
+            <br>
+            <form action="submit_form.php" method="post"
+                style="display: flex; flex-direction: column; align-items: flex-start; max-width: 500px;">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" maxlength="25" required
+                    style="width: 100%; margin-bottom: 15px;">
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" maxlength="25" required
+                    style="width: 100%; margin-bottom: 15px;">
+
+                <label for="message">Message (up to 500 words):</label>
+                <textarea id="message" name="message" rows="4" maxlength="500" required
+                    style="width: 100%; margin-bottom: 15px;"></textarea>
+                <button type="submit" style="align-self: center; margin: 0 auto;">Submit</button>
+            </form>
+            <br>
+            <h3>Alternatively, you can contact me via:</h3>
             <ul>
+                <li>- address: Niš (Nish), Serbia</li>
                 <li>- email: dalibor.vodenicarski@gmail.com</li>
                 <li>- cell: +381-63-11-22-33-55-88</li>
             </ul>
         </section>
     </main>
     <footer>
-        <p>&copy; 2025 My Web Page</p>
+        <p>&copy; @vodenizza 2025 My Web Page</p>
     </footer>
 </body>
+
 </html>
-
-
-
