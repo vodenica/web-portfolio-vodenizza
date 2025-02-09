@@ -101,19 +101,32 @@
             const links = document.querySelectorAll('nav a');
             const sections = document.querySelectorAll('main section');
 
+            // Hide all sections except Home on initial load
+            sections.forEach(section => {
+                section.style.display = section.id === 'home' ? 'block' : 'none';
+            });
+
+            // Update navigation active state
+            function setActiveLink(targetId) {
+                links.forEach(link => {
+                    const linkId = link.getAttribute('href').substring(1);
+                    link.classList.toggle('active', linkId === targetId);
+                });
+            }
+
             links.forEach(link => {
                 link.addEventListener('click', function (event) {
                     event.preventDefault();
                     const targetId = this.getAttribute('href').substring(1);
                     sections.forEach(section => {
-                        if (section.id === targetId) {
-                            section.style.display = 'block';
-                        } else {
-                            section.style.display = 'none';
-                        }
+                        section.style.display = section.id === targetId ? 'block' : 'none';
                     });
+                    setActiveLink(targetId);
                 });
             });
+
+            // Set Home as active initially
+            setActiveLink('home');
         });
     </script>
 </head>
@@ -325,9 +338,11 @@
                 <ul>
                     <li><strong>- Food Manufacturing:</strong> Enhance efficiency, safety, and compliance in food
                         production facilities.</li>
-                    <li><strong>- Tourism & Hospitality:</strong> Optimize cable car systems, amusement parks, and resort
+                    <li><strong>- Tourism & Hospitality:</strong> Optimize cable car systems, amusement parks, and
+                        resort
                         operations.</li>
-                    <li><strong>- Security Systems:</strong> Provide expertise in fire safety, security, and CCTV systems.
+                    <li><strong>- Security Systems:</strong> Provide expertise in fire safety, security, and CCTV
+                        systems.
                     </li>
                     <li><strong>- Transportation Systems:</strong> Consult on the maintenance and optimization of urban
                         cable cars and complex transit systems.</li>
