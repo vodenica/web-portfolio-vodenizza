@@ -14,7 +14,7 @@
         /* Header container styling */
         .header-container {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
             position: fixed;
             top: 0;
@@ -23,21 +23,36 @@
             background: #1d1f1c;
             padding: 15px 50px;
             z-index: 1000;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Header content centering */
+        header {
+            text-align: center;
+            width: 100%;
         }
 
         /* Logo styling */
         .logo {
             width: 346px;
             height: 83px;
+            margin: 0 auto;
         }
 
-        /* Navigation styling */
+        /* Navigation centering */
+        nav {
+            width: 100%;
+            margin-top: 15px;
+        }
+
         nav ul {
             display: flex;
             gap: 30px;
             list-style: none;
             margin: 0;
             padding: 0;
+            justify-content: center;
         }
 
         nav a {
@@ -53,8 +68,15 @@
 
         /* Main content padding */
         main {
-            margin-top: 150px;
-            /* Add space for fixed header */
+            margin-top: 180px;
+            /* Reduced since we're using scroll-margin */
+        }
+
+        /* Add scroll margin to sections */
+        section {
+            scroll-margin-top: 250px;
+            /* Match header height */
+            padding-top: 130px;
         }
 
         /* Responsive design */
@@ -74,25 +96,36 @@
         }
 
         @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                padding: 15px;
-                position: relative;
+            section {
+                scroll-margin-top: 160px;
+                /* Adjusted for mobile */
+                padding-top: 30px;
+            }
+
+            main {
+                margin-top: 160px;
+                /* Adjusted for mobile */
             }
 
             .logo {
                 width: 200px;
-                margin-bottom: 15px;
+                margin-bottom: 10px;
             }
 
             nav ul {
                 flex-wrap: wrap;
-                justify-content: center;
                 gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                gap: 10px;
             }
 
             main {
-                margin-top: 30px;
+                margin-top: 240px;
+                /* Extra space for wrapped navigation */
             }
         }
     </style>
@@ -118,10 +151,18 @@
                 link.addEventListener('click', function (event) {
                     event.preventDefault();
                     const targetId = this.getAttribute('href').substring(1);
+
                     sections.forEach(section => {
                         section.style.display = section.id === targetId ? 'block' : 'none';
                     });
+
                     setActiveLink(targetId);
+
+                    // Smooth scroll to section with offset
+                    document.getElementById(targetId).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 });
             });
 
@@ -132,22 +173,25 @@
 </head>
 
 <body>
-    <header>
-        <!-- Add logo image -->
-        <img src="img/logo-vodenizza-engineering-large-orng-blck-resize.png" alt="Website Logo" class="logo">
-        <h1>Welcome to My Portfolio Website</h1>
-        <h2>Dalibor Vodeničarski, Ph.D., MBA, BSc</h2>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#blogs">Blogs</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <!-- Header container -->
+    <div class="header-container">
+        <header>
+            <!-- Add logo im</header>age -->
+            <img src="img/logo-vodenizza-engineering-large-orng-blck-resize.png" alt="Website Logo" class="logo">
+            <h1>Welcome to My Portfolio Website</h1>
+            <h2>Dalibor Vodeničarski, Ph.D.</h2>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#blogs">Blogs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
     <main>
         <section id="home">
             <h2>Home</h2>
@@ -418,7 +462,7 @@
         </section>
         <section id="blogs">
             <h2>Blog</h2>
-            <p style="text-align: center; font-size: 2em;">🚧 Under construction 🚧</p>
+            <p style="text-align: center; font-size: 1.5em;">🚧 Under Construction 🚧</p>
         </section>
         <section id="contact">
             <h2>Contact</h2>
@@ -450,7 +494,7 @@
         </section>
     </main>
     <footer>
-        <p>&copy; @vodenizza 2025 My Web Page</p>
+        <p>&copy;vodenizza 2025</p>
     </footer>
 </body>
 
