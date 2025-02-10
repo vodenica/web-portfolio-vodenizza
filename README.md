@@ -1,6 +1,6 @@
 [My GitHub Repository](https://github.com/vodenica?tab=repositories)
 
-[My Portfolio Website](https://vodenica.github.io/webvodenica/)
+[My Portfolio Website](https://vodenica.github.io/web-portfolio-vodenizza/)
 
 ### Personal Portfolio Website
 
