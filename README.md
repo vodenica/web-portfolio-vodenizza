@@ -36,7 +36,7 @@ git init
 ```
 Thank you clone/pull the repository
 ```bash
-git clone <<repository-url>>
+git clone <repository-url>
 ```
 or 
 ```bash
@@ -69,7 +69,7 @@ git push --force
 ```
 or
 ```bash 
-git push <<repository-url>> master / main --force
+git push <repository-url> master / main --force
 ```
 
 2. Open the project in your favourite code editor.
