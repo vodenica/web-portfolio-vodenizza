@@ -36,7 +36,7 @@ git init
 ```
 Thank you clone/pull the repository
 ```bash
-git clone <<repository-url>
+git clone <<repository-url>>
 ```
 or 
 ```bash
@@ -67,8 +67,12 @@ Push the changes to the repository - GOOD LUCK.... :happy:
 ```bash 
 git push --force
 ```
+or
+```bash 
+git push <<repository-url>> master / main --force
+```
 
-2. Open the project in your favorite code editor.
+2. Open the project in your favourite code editor.
 
 3. Open the `index.html` file in your browser with the Live Server extension in VS Code or any other way you prefer.
 
