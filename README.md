@@ -25,7 +25,7 @@ This is my personal portfolio website. It is a static website built with HTML, C
 
 1. Clone the repository
 ```bash
-mkdr <folder-name>
+mkdir <folder-name>
 ```
 ```bash
 cd <folder-name>
